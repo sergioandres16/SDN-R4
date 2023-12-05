@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.projectfloodlight</groupId>
 	<artifactId>floodlight</artifactId>
@@ -10,7 +10,7 @@
 		<repository>
 			<id>maven-restlet</id>
 			<name>Public online Restlet repository</name>
-			<url>https://maven.restlet.com</url> <!-- Cambiado a HTTPS -->
+			<url>https://maven.restlet.com</url>
 		</repository>
 		<repository>
 			<id>sonatype-oss-snapshot</id>
@@ -56,7 +56,7 @@
 		</plugins>
 		<pluginManagement>
 			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings 
+				<!--This plugin's configuration is used to store Eclipse m2e settings
 					only. It has no influence on the Maven build itself. -->
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
@@ -89,37 +89,37 @@
 					</configuration>
 				</plugin>
 				<plugin>
-                   			<groupId>org.apache.maven.plugins</groupId>
-                    			<version>2.5</version>
-                    			<artifactId>maven-assembly-plugin</artifactId>
-                    			<configuration>
-                        			<descriptorRefs>
-                            				<descriptorRef>jar-with-dependencies</descriptorRef>
-                        			</descriptorRefs>
-                        			<archive>     
-                            				<manifestEntries>
-                                				<Class-Path>.</Class-Path>
-                            				</manifestEntries>
-                            				<manifest>
-                                				<!-- <addClasspath>true</addClasspath>
-                                				<classpathPrefix>../lib/</classpathPrefix> -->
-                                				<mainClass>net.floodlightcontroller.core.Main</mainClass>
-                                				<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                                				<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
-                            				</manifest>
-                        			</archive>
-                        			<appendAssemblyId>false</appendAssemblyId>
-                        			<finalName>floodlight</finalName>
-                    			</configuration>
-                    			<executions>
-                        			<execution>
-                            				<phase>package</phase>
-                            				<goals>
-                                				<goal>single</goal>
-                            				</goals>
-                        			</execution>
-                    			</executions>
-                		</plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<version>2.5</version>
+					<artifactId>maven-assembly-plugin</artifactId>
+					<configuration>
+						<descriptorRefs>
+							<descriptorRef>jar-with-dependencies</descriptorRef>
+						</descriptorRefs>
+						<archive>
+							<manifestEntries>
+								<Class-Path>.</Class-Path>
+							</manifestEntries>
+							<manifest>
+								<!-- <addClasspath>true</addClasspath>
+                                <classpathPrefix>../lib/</classpathPrefix> -->
+								<mainClass>net.floodlightcontroller.core.Main</mainClass>
+								<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+								<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+							</manifest>
+						</archive>
+						<appendAssemblyId>false</appendAssemblyId>
+						<finalName>floodlight</finalName>
+					</configuration>
+					<executions>
+						<execution>
+							<phase>package</phase>
+							<goals>
+								<goal>single</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
 			</plugins>
 		</pluginManagement>
 		<resources>
@@ -132,11 +132,11 @@
 				</includes>
 			</resource>
 			<resource>
-                		<directory>src/main/resources</directory>
+				<directory>src/main/resources</directory>
 			</resource>
-            		<resource>
-                		<directory>src/test/resources</directory>
-            		</resource>
+			<resource>
+				<directory>src/test/resources</directory>
+			</resource>
 		</resources>
 	</build>
 	<dependencies>
@@ -150,7 +150,6 @@
 			<artifactId>logback-classic</artifactId>
 			<version>1.0.0</version>
 		</dependency>
-		
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
@@ -267,6 +266,11 @@
 			<groupId>com.fasterxml.jackson.dataformat</groupId>
 			<artifactId>jackson-dataformat-cbor</artifactId>
 			<version>${lib-jackson-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>jakarta.xml.bind</groupId>
+			<artifactId>jakarta.xml.bind-api</artifactId>
+			<version>2.3.3</version>
 		</dependency>
 	</dependencies>
 	<properties>
